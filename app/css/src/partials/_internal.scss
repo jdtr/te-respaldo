@@ -1,0 +1,412 @@
+.banner-internal {
+    &_cont {
+        padding-top: 45px;
+        padding-bottom: 85px;
+    }
+    &_text {
+        position: relative;
+        max-width: 650px;
+        padding: 0 60px 35px 60px;
+        margin-left: auto;
+        margin-right: auto;
+        p {
+            font-size: 20px;
+        }
+        &:after {
+            @include seudo_elm();
+            width:100px;
+            height: 2px;
+            background-color: $yellow;
+            left:0;
+            right: 0;
+            bottom: 0;
+            margin:auto;
+        }
+        &--two {
+            padding-bottom: 0;
+            &:after {
+                content: normal;
+            }
+            .banner-internal_title:after {
+                content: url("../../../assets/images/circle-orange-right.png");
+            }
+        }
+    }
+    &_title {
+        position: relative;
+        font-size: 50px;
+        padding: 10px 0;
+        &:before, &:after {
+            display: inline-block;
+            top: 50%;
+            height: 80px;            
+        }
+        &:before{
+            @include seudo_elm(url("../../../assets/images/circle-dark-left.png"));
+            left:0;
+            transform: translate(-100%,-50%);
+        }
+        &:after {
+            @include seudo_elm(url("../../../assets/images/circle-light-right.png"));
+            right:0;
+            transform: translate(100%,-50%);
+        }
+        //Responisive 
+        @media ( max-width:767px ) {
+            font-size: 40px;
+        }
+    }
+}
+//Cont-filter
+.cont-filter {
+    margin-bottom: 15px;
+    .select-custom {
+        flex-grow: 1;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+//Feed-twitter
+.feed-twitter {
+    &_header {
+        margin-bottom: 15px;
+    }
+    &_title {
+        flex-grow: 1;
+    }
+
+    //Responsive 
+    @media (max-width:991px) {
+        margin-top: 50px;
+    }
+}
+.btn-twitter {
+    padding: 7px 30px;
+    border-radius: 30px;
+    color: #47b9dd;
+    border: 1px solid #47b9dd;
+    font-weight: bold;
+    transition: background-color .3s linear;
+    &:hover {
+        background-color: #47b9dd;
+        color:white;
+    }
+}
+.twitter-item {
+    position: relative;
+    padding: 20px 20px 15px 75px;
+    border-top: 1px solid $gray-medium;
+    &_fig {
+        position: absolute;
+        top: 20px;
+        left: 0;
+    }
+    &_cont {
+        p {
+            font-size: 14px;
+        }
+    }
+}
+.twitter-name {
+    margin-right: 6px;
+}
+.twitter-user {
+    flex-grow: 1;
+}
+.twitter-user, .twitter-time {
+    font-size: 12px;
+}
+
+//Pagination
+.mod-pagination {
+    margin-top: 50px;
+    padding: 15px 25px;
+    box-shadow:0 0 2px rgba(#222, .2);
+    border-radius: 4px;
+}
+.pagination-list {
+    padding-left: 12px;
+    padding-right: 12px;
+    border-left: 1px solid $gray-medium;
+    border-right: 1px solid $gray-medium;
+}
+.pagination-item {
+    a {
+        display: block;
+        padding: 5px 10px;
+        border-radius:3px;
+    }
+    &.is-active {
+        a {
+            background-color: $red;
+            color: white;
+        }
+    }
+}
+.pagination-btn {
+    display: inline-block;
+    position: relative;
+    color: $blue-medium;
+    &--prev:before, &--next:after {
+        @include seudo_elm();
+        width: 0;
+        height: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    &--prev {
+        padding-left: 20px;
+        &:before {
+            border-width: 8px 8px 8px 0;
+            border-style:solid;
+            border-color: transparent $gray-dark transparent transparent;
+            left: 0;
+        }
+    }
+    &--next {
+        padding-right: 20px;
+        &:after {
+            border-width: 8px 0 8px 8px;
+            border-style:solid;
+            border-color: transparent transparent transparent $gray-dark;
+            right: 0;
+        }
+    }
+}
+
+//detail-mod
+.detail-mod {
+    padding: 55px 0 90px 0;
+    h3 {
+        font-size: $size-18;
+        margin-bottom: 10px;
+    }
+    p {
+        color: $gray-dark;
+        margin-bottom: 20px;
+    }
+}
+.subtitle-detail {
+    position: relative;
+    padding-bottom: 40px;
+    &:after {
+        @include seudo_elm();
+        width: 90px;
+        height: 2px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: $yellow;
+    }
+}
+.actions-detail {
+    margin-top: 80px;
+}
+
+//comments
+.cont-form-comments {
+    padding-left: 130px;
+    //Responsive
+    @media ( max-width:575px ) {
+        padding-left: 0;
+    }
+}
+.comments-avatar {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    //Responsive
+    @media ( max-width:575px ) {
+        display: none;
+    }
+}
+.form-comments {
+    input, textarea {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+    }
+    textarea {
+        height: 120px;
+    }
+}
+.comments-cont {
+    border-bottom: 1px solid $gray-medium;
+}
+.comment {
+    position: relative;
+    padding-left: 130px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $gray-medium;
+    &:last-of-type {
+        border-bottom: none;
+    }
+    &_fig {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &_header {
+        margin-bottom: 12px;
+        h3 {
+            margin-right: 10px;
+        }
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    //Responsive
+    @media ( max-width:575px ) {
+        padding-left: 0;
+        &_fig {
+            display: none;
+        }
+    }
+}
+
+//Faqs
+.search-faq {
+    position: relative;
+    margin-top: 30px;
+    input {
+        padding: 12px 50px 12px 20px;
+        display: block;
+        width: 100%;
+        border: transparent;
+    }
+    .search-faq_btn {
+        position: absolute;
+        width: 50px;
+        height: 100%;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+
+//tabs-faq
+.tabs-faq {
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(#222, .1);
+    &_item {
+        position: relative;
+        background-color: white;
+        border-bottom: 1px solid $gray-medium;
+        &:before, &:after {
+            @include seudo_elm();
+            border-radius: 50%;
+            margin:auto;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        &:before {
+            width: 15px;
+            height: 15px;            
+            left: 20px;
+            border: 1px solid $gray-medium;
+        }
+        &:after {
+            width: 6px;
+            height: 6px;
+            left: 26px;
+            background-color: $blue-light;
+        }
+        a {
+            display: block;
+            position: relative;
+            padding: 20px 50px;
+            font-size: $size-18;
+            color: $blue-medium;
+            &:hover {
+                &:after {
+                    right: 22px;
+                }
+            }
+            &:after {
+                @include seudo_elm();
+                width: 8px;
+                height: 8px;
+                top: 0;
+                right: 25px;
+                bottom: 0;
+                margin: auto;
+                border-top: 2px solid $red;
+                border-right: 2px solid $red;
+                transition: right .2s linear;
+                transform: rotate(45deg);
+            }
+        }
+        .is-active {
+            background-color: $gray-light;
+        }
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    &--mob {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+.faqs-result {
+    padding: 20px 30px;
+    background-color: white;
+    border-bottom: 1px solid $gray-medium;
+}
+.accordion-faq {
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(#222, .1);
+    dt {
+        position: relative;
+        padding: 25px 20px 25px 0;
+        border-bottom: 1px solid $gray-medium;
+        font-size: $size-18;
+        color: $blue-medium;
+        cursor: pointer;
+        @extend .u-medium;
+        &:before, &:after {
+            @include seudo_elm();
+            width: 3px;
+            height: 15px;
+            background-color: $red;
+            top: 50%;
+            right: 5px;
+            border-radius: 20px;
+            transform: translateY(-50%);
+            transition: opacity .2s linear;
+        }
+        &:after {
+            transform: translateY(-50%) rotate(90deg);
+        }
+        &.is-active {
+            border-bottom: 1px solid transparent;
+            &:before {
+                opacity: 0;
+            }
+        }
+    }
+    dd {
+        display: none;
+        padding-bottom: 40px;
+        border-bottom: 1px solid $gray-medium;
+        &.is-active {
+            display: block;
+        }
+    }
+}
+.btn-faqs {
+    display: block;
+    padding: 20px 30px;
+    box-shadow: 0 0 10px rgba(#222, .1);
+    color: $blue-medium;
+}

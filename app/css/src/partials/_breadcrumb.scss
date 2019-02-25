@@ -1,0 +1,40 @@
+.breadcrumb {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(#222, .1);
+    .bg-blue-light & {
+        border-bottom: 1px solid rgba(white, .4);
+    }
+}
+.breadcrumb_item {
+    display: inline-block;
+    position: relative;
+    margin-right: 8px; 
+    &:not(:first-of-type) {
+        padding-left: 20px;
+        &:before {
+            @include seudo_elm("/");
+            top: 0;
+            left: 0;
+        }
+    }
+    &.is-active {
+        font-weight: bold;
+        padding-right: 15px;
+        .bg-blue-light &.is-active:after {
+            border-color: transparent transparent transparent white;
+        }
+        &:after {
+            @include seudo_elm();
+            width: 0;
+            height: 0;
+            border-width:6px 0 6px 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent $yellow;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}

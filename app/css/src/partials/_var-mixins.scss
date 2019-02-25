@@ -1,0 +1,53 @@
+// ============== Var ==============
+//Colors
+$blue-light: #58e1db;
+$blue-medium:#112160;
+$blue-dark: #313a54;
+$red:#fc3936;
+$yellow: #ffc508;
+$gray-light:#f3f3f3;
+$gray-medium: #d7d7d7;
+$gray-dark: #5d5d5d;
+
+//Size fonts
+$size-14: 0.875rem;
+$size-16: 1rem;
+$size-16: 1rem;
+$size-18: 1.1rem;
+$size-20: 1.3rem;
+$size-24: 1.5rem;
+$size-30: 1.875rem;
+
+// ============== Mixins ==============
+@mixin seudo_elm ($cont:'', $pos:absolute) {
+    content: $cont;
+    position: $pos;
+}
+@mixin transition ($prop:all, $time:.3s, $easing:linear) {
+    transition: $prop $time $easing;
+}
+@mixin centerTrans ($top:50%, $left:50%, $x:-50%, $y:-50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($x, $y);
+}
+@mixin stylePlaceholder ($elm:input, $color:currentColor) {
+    ::-webkit-#{$elm}-placeholder { 
+        color: $color;
+    }
+    /* Firefox 18- */
+    #{$elm}-:-moz-placeholder {
+        color: $color;
+    }
+
+    /* Firefox 19+ */
+    #{$elm}-::-moz-placeholder {
+        color: $color;
+    }
+
+    /* IE10+ */
+    #{$elm}-:-ms-input-placeholder {
+        color: $color;
+    }
+}

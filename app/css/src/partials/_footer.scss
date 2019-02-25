@@ -1,0 +1,21 @@
+.footer-main {
+    padding: 50px 0 30px 0;
+}
+.links-footer{
+    a {
+        display: inline-block;
+        color: currentColor;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+.logos-footer {
+    margin-bottom: 30px;
+    border-top: 6px solid darken($blue-dark, 10%);
+    border-bottom: 6px solid darken($blue-dark, 10%);
+}
+.footer-copy {
+    font-size: 1rem;
+}

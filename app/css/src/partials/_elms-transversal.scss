@@ -1,0 +1,68 @@
+.quote-fixed {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    padding: 20px 40px 30px 20px;
+    width: 270px;
+    box-shadow: -2px 5px 15px rgba(#222, .1);
+    &.is-hide {
+        display: none;
+    }
+    &_close {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        width: 20px;
+        height: 20px;
+        &:before, &:after {
+            @include seudo_elm();
+            width: 1px;
+            height: 20px;
+            background-color: $gray-dark;
+        }
+        &:before {
+            transform: rotate(-45deg);
+        }
+        &:after {
+            transform: rotate(45deg);
+        }
+    }
+
+    //Responsive 
+    @media (max-width:991px) {
+        display: none;
+    }
+}
+.chat-button {
+    position: fixed;
+    top: 55%;
+    right:40px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    img {
+        position: absolute;
+        max-width: 45px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    &:after {
+        @include seudo_elm();
+        width: 0;
+        height: 0;
+        border-width: 10px 12px 0 12px;
+        border-style: solid;
+        border-color: $yellow transparent transparent transparent; 
+        left: 0;
+        right: 0;
+        bottom: -9px;
+        margin: auto; 
+    }
+
+    //Responsive 
+    @media (max-width:767px) {
+        display: none;
+    }
+}
+

@@ -1,0 +1,99 @@
+@keyframes fadeDownSearch {
+    to {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+} 
+//Header-main
+.header-main {
+    width: 100%;
+    padding: 20px 0;
+    z-index: 100;
+    background-color: white;
+    // Responisve
+    @media ( max-width:991px ) {
+        &.is-active {
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 1px rgba($blue-dark, .2);
+        }
+    }
+}
+//Menu-global
+.menu-global {
+    text-align: right;
+    &_item {
+        display: inline-block;
+        .menu-global_list & {
+            padding: 0 8px;
+        }
+    }
+    &_link {
+        display: block;
+    }
+}
+//Search main
+.search-main {
+    position: relative;
+    border-radius: 3px;
+    width: 32px;
+    padding: 8px 0;
+    @include transition(border);
+    input {
+        display: block;
+        border:none;
+        width: 0;
+        @include transition(padding);
+    }
+    &_btn {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        font-size: $size-18;
+        transform: translateY(-50%);
+    }
+    &.is-active {
+        width: auto;
+        border: 1px solid darken($gray-light, 20%);
+        &, input {
+            width: auto;
+        }
+        input {
+            padding: 8px 12px 8px 38px;
+        }
+    }
+    &--mob {
+        display: none;
+        position: absolute;
+        padding: 15px 10%;
+        background-color: $blue-dark;
+        z-index: 100;
+        opacity: 0;
+        transform: translateY(0);
+        input {
+            border-radius: 3px;
+        }
+        .search-main_btn {
+            position: absolute;
+            left: inherit;
+            right: 11%;
+        }
+    }
+    //Responsive 
+    @media ( max-width: 991px ) {
+        &.is-active {
+            display: block;
+            animation: fadeDownSearch .2s linear forwards;
+            &, input {
+                width: 100%;
+            }
+            input {
+                padding: 8px 30px 8px 10px;
+            }
+        }
+    }
+}
+.search-mobile {
+    padding: 8px;
+}

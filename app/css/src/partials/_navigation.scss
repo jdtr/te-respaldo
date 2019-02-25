@@ -1,0 +1,130 @@
+@keyframes heightAnim {
+    to {
+        height: 100%;
+    }
+}
+//Nav main
+.nav-main {
+    width: 100%;
+    z-index: 100; 
+    &.is-active {
+        display: block;
+    }
+    // Responsive
+    @media ( max-width:991px ) {
+        display: none; 
+        position: fixed;        
+        height: 0;
+        left: 0;
+        padding-bottom: 20%;
+        overflow: auto;
+        &.is-active {
+            animation: heightAnim .15s linear forwards;
+        }
+    }
+    @media ( min-width:992px ) {
+         &.is-fixed {
+             position: fixed;
+             top: 0;
+             left: 0;
+         }
+    }
+
+}
+.menu-main { 
+    width: 100%;
+    &_link {
+        display: block;
+        position: relative;
+        padding: 15px 0;
+    }
+
+    // Responsive
+    @media (max-width: 991px) { 
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(white, .2);
+    }
+    @media (min-width: 992px) {
+        &_item {
+            margin-left:25px;
+            margin-right:25px;
+        }  
+        &_link {
+            &:after {
+                @include seudo_elm();
+                width: 0;
+                height: 3px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                background-color: $yellow;
+                @include transition (width, .12s);
+            }
+            &:hover:after {
+                width: 100%;
+            }
+        }
+    }
+}
+.menu-main, .menu-global_list {
+    @media (max-width:991px) {
+        padding-top: 30px;
+        text-align: center;
+    }
+}
+.menu-global {
+    @media (max-width:991px) { 
+        &_link{
+            padding: 15px 0;
+            &:not(.color-red) {
+                color: white;
+            }
+        }
+    }
+}
+.menu-global_item, .menu-main_item {
+    @media ( max-width:991px ) {
+        width: 100%;
+        &.is-active {
+            a {
+                position: relative;
+                &:after {
+                    @include seudo_elm();
+                    width:80px;
+                    height: 1px;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background-color: $yellow;
+                }
+            }
+        }
+    }
+}
+
+.btn-mobile {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    transition: border .2s linear;
+    &.is-active {
+        border:1px solid $blue-dark;
+    }
+    &:focus {
+        outline: transparent;
+    }
+    &:before {
+        @include seudo_elm();
+        width: 30px;
+        height: 3px;
+        border-radius: 30px;
+        background-color: $blue-dark;
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 8px 0 $blue-dark, 0 -8px 0 $blue-dark;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -10,6 +10,9 @@
     display: inline-block;
     position: relative;
     margin-right: 8px; 
+    a {
+        color: currentColor;
+    }
     &:not(:first-of-type) {
         padding-left: 20px;
         &:before {

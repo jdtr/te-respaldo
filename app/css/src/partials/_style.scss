@@ -236,6 +236,23 @@
     &:after {
         right: 0;
     }
+    &--one {
+        h2 {
+            font-size: 45px;
+        }
+        span {
+            display: inline-block;
+            font-size: 1em;
+        }
+    }
+    &--white {
+        &:before, &:after {
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: white;
+        }
+    }
     //Responisve
     @media ( max-width:991px ) {
         h2 {

@@ -8,7 +8,7 @@ $(function () {
         isActive = "is-active"; 
 
     //Functions
-    function tabs (tab) {
+    function tabs (tab, elmScroll) {
         var hrefTab,
             firstTab = $(tab).first(),
             firstCont = firstTab.attr("href");
@@ -24,10 +24,10 @@ $(function () {
             $(hrefTab).addClass(isActive)
             $(tab).removeClass(isActive);
             $(this).addClass(isActive);
-            $("html, body").animate({ scrollTop: $("#cont-accordion").offset().top}, 500);
+            $("html, body").animate({ scrollTop: $(elmScroll).offset().top - 100}, 500);
         });
     }
-    function tabsMob (selector) {
+    function tabsMob (selector, elmScroll) {
         var valTab,
             firstTab = $(selector + " option").first(),
             firstCont = firstTab.val();
@@ -40,7 +40,7 @@ $(function () {
             console.log(valTab)
             $(".tab-content").removeClass(isActive);
             $(valTab).addClass(isActive);
-            $("html, body").animate({ scrollTop: $("#cont-accordion").offset().top - 100}, 500);
+            $("html, body").animate({ scrollTop: $(elmScroll).offset().top - 100}, 500);
         });
     }
     function accordion (selector) {
@@ -131,7 +131,10 @@ $(function () {
     })
 
     //Tabs  
-    tabs(".tabs-faq_item a");
-    tabsMob("#tabs-faq-mob");
+    tabs(".tabs-faq_item a", "#cont-accordion");
+    tabsMob("#tabs-faq-mob", "#cont-accordion");
     accordion(".accordion-faq dt");
+
+    tabs (".m-tabs_item a", ".cont-tabs");
+    tabsMob(".m-tabs--mob", ".cont-tabs");
 })

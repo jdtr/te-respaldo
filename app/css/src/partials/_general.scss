@@ -1,16 +1,25 @@
 //Tags
-*{
+html, body {
     font-family: 'Roboto', sans-serif;
     color: $blue-dark;
 }
 body {
     transition: padding .3s linear;
 }
-input, select, button, textarea {
-    display: inline-block;
-    font-size: 1rem;
+input:not([type="checkbox"]), textarea, select {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: white;
+    border-radius: 3px;
 }
-   
+input, textarea, select, button {
+    font-size: 1rem;
+    border: 1px solid rgba($blue-dark, .3);
+}
+button {
+    display: inline-block;
+}
 @include stylePlaceholder(input, $blue-medium);
 @include stylePlaceholder(textarea, $blue-medium);
 
@@ -30,6 +39,7 @@ img {
     max-width: 100%;
 }
 a {
+    color: currentColor;
     text-decoration: none;
 }
 section {
@@ -39,12 +49,28 @@ h1, h2, h3, h4, h5, h6 {
     color: $blue-medium;
     letter-spacing: .4px;
 }
+h1 {
+    font-size: $size-35
+}
 h2 {
+    font-size: $size-30;
     line-height: 1.1;
     span {
         display: block;
         font-weight: normal;
     }
+}
+h3 {
+    font-size: $size-24;
+}
+h4 {
+    font-size: $size-20;
+}
+h5 {
+    font-size: $size-18;
+}
+h4 {
+    font-size: $size-16;
 }
 
 //Padding & margin
@@ -63,12 +89,37 @@ h2 {
     padding-top: 70px;
     padding-bottom: 100px;
 }
+.pad-04 {
+    padding: 100px 0;
+    //Responsive
+    @media ( max-width:767px ) {
+        padding: 80px 0;
+    }
+}
+.pad-05 {
+   padding: 120px 0; 
+}
+.pad-top-01 {
+    padding-top: 120px;
+}
+.pad-left-25 {
+    padding-left: 25px;
+}
+.pad-btm-01 {
+    padding-bottom: 90px;
+}
 .pad-y-50 {
     padding-top: 50px;
     padding-bottom: 50px;
 }
 .pad-top-50 {
     padding-top: 50px;
+}
+.mg-top-20 {
+    margin-top: 40px;
+}
+.mg-top-40 {
+    margin-top: 40px;
 }
 .mg-btm-20 {
     margin-bottom: 20px;
@@ -82,9 +133,11 @@ h2 {
 .mg-btm-50 {
     margin-bottom: 50px;
 }
+.mg-btm-60 {
+    margin-bottom: 60px;
+}
 
 //Text
-
 .text-center {
     text-align: center;
 }
@@ -103,7 +156,6 @@ h2 {
 .u-medium {
     font-weight: 500;
 }
-
 .font {
     &-14 {
         font-size: $size-14;
@@ -116,6 +168,9 @@ h2 {
     }
     &-30 {
         font-size: $size-30;
+    }
+    &-35 {
+        font-size: $size-35;
     }
 }
 
@@ -135,6 +190,9 @@ h2 {
     }
     &-gray-dark {
         color: $gray-dark;
+    }
+    &-blue-medium {
+        color: $blue-medium;
     }
 }
 .bg {
@@ -263,6 +321,9 @@ h2 {
 .d-inline-block {
     display: inline-block;
 }
+.d-block {
+    display: block;
+}
 
 //No padding
 .no-padding {
@@ -276,10 +337,20 @@ h2 {
 
 //Hide
 .hide-mob-sm {
+    @media ( max-width: 767px ) {
+        display: none;
+    }
+} 
+.hide-mob-md {
     @media ( max-width: 991px ) {
         display: none;
     }
 } 
+.hide-desktop-sm {
+    @media ( min-width: 768px ) {
+        display: none;
+    }
+}
 .hide-desktop-md {
     @media ( min-width: 992px ) {
         display: none;
@@ -310,5 +381,49 @@ h2 {
     &.is-active {
         display: block;
         animation: fadeIn .3s linear forwards;
+    }
+}
+
+//Title
+.title-one {
+    font-size: 45px;
+    span {
+        display: inline-block;
+    }
+}
+.title-two {
+    font-size: 50px;
+    span {
+        font-size: $size-35;
+    }
+}
+
+//List
+.list-dash {
+    li {
+        position: relative;
+        padding-left: 25px;
+        &:before {
+            @include seudo_elm("-");
+            top: 8px;
+            left: 0;
+            font-size: 2em;
+            line-height: .1;
+            color: currentColor;
+        }
+    }
+    &--white {
+        li {
+            &:before {
+                color: white;
+            }
+        }
+    }
+    &--red {
+        li {
+            &:before {
+                color: $red;
+            }
+        }
     }
 }

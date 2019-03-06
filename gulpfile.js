@@ -9,7 +9,8 @@ const { src, dest, parallel, watch, series } = require('gulp'),
     uglify = require('gulp-uglify'),
     server = require('gulp-server-livereload'),
     babel = require('gulp-babel'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    htmlRender = require('gulp-htmlrender');
 
 const vendors = {
     css: 'app/css/vendors/*.css',
@@ -26,11 +27,11 @@ const pathDest = {
 };
 
 //Html
-function htmlSSI () {
-    return src(pathSrc.html)
-        .pipe(includer())
-        .pipe(dest('./app'));
-}
+// function renderHtml () {
+//     return src('app/html-tmp/index.html', {read: false})
+//         .pipe(htmlRender.render())
+//         .pipe(dest('app'));
+// }
 
 //Sass
 function scss () {
@@ -106,7 +107,7 @@ function browserSyncReload(done) {
 
 //Watch 
 function watchFiles () {
-    watch('app/*.html', series(browserSyncReload));
+   // watch('app/**/*.html', series(renderHtml, browserSyncReload));
     watch('app/css/src/**/*.scss', series(scss, browserSyncReload));
     watch('app/js/src/*.js', series(jsTask, browserSyncReload));
     watch(vendors.css, series(cssVendor, browserSyncReload));
@@ -115,7 +116,7 @@ function watchFiles () {
 
 const build = series(parallel(watchFiles, browsersync));
 
-// exports.htmlSSI = htmlSSI;
+//exports.renderHtml = renderHtml;
 exports.scss = scss;
 exports.jsTask = jsTask;
 exports.cssVendor = cssVendor;

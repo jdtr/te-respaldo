@@ -7,10 +7,7 @@
     <title>Te respaldo</title>
 
     <!-- Styles-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400,500,700"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -22,113 +19,7 @@
   </head>
   <body>
     <div class="main">
-      <header class="header-main" id="header-main">
-        <div class="container">
-          <div class="flex-container flex-align-center">
-            <figure class="col-md-5 col-7">
-              <a href="#">
-                <img
-                  src="assets/images/logo-te-respaldo.png"
-                  alt="Logo te respaldo"
-                />
-              </a>
-            </figure>
-            <!-- /col -->
-            <div class="col-md-7 menu-global hide-mob-sm">
-              <div class="menu-global_item">
-                <div class="search-main">
-                  <button class="search-main_btn" aria-label="Buscar">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                  </button>
-                  <input type="text" placeholder="Buscar" />
-                </div>
-              </div>
-              <!-- /item -->
-              <div class="menu-global_item">
-                <ul class="menu-global_list">
-                  <li class="menu-global_item">
-                    <a href="#" class="menu-global_link">Contáctanos</a>
-                  </li>
-                  <li class="menu-global_item">
-                    <a href="blog.html" class="menu-global_link">Blog</a>
-                  </li>
-                  <li class="menu-global_item">
-                    <a href="#" class="color-red menu-global_link"
-                      >Iniciar sesión</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- /col -->
-            <div class="col-5 hide-desktop-md text-right">
-              <button
-                id="search-mobile"
-                class="search-mobile"
-                aria-label="Buscar"
-              >
-                <i class="fas fa-search font-20" aria-hidden="true"></i>
-              </button>
-              <button
-                id="nav-mobile"
-                class="btn-mobile"
-                aria-label="Menu"
-              ></button>
-            </div>
-          </div>
-          <!-- /row -->
-        </div>
-        <!-- /Container -->
-        <div class="search-main search-main--mob d-inline-block">
-          <button class="search-main_btn" aria-label="Buscar">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </button>
-          <input type="text" placeholder="Buscar" />
-        </div>
-      </header>
-      <!-- /header -->
-      <nav class="nav-main bg-blue-dark" id="nav-main">
-        <div class="container">
-          <ul class="menu-main flex-container flex-justify-center">
-            <li class="menu-main_item">
-              <a href="cotiza-y-compara.html" class="color-white menu-main_link"
-                >Cotiza y compara</a
-              >
-            </li>
-            <!-- /item -->
-            <li class="menu-main_item">
-              <a href="#" class="color-white  menu-main_link"
-                >Encuentra tu seguro</a
-              >
-            </li>
-            <!-- /item -->
-            <li class="menu-main_item">
-              <a href="#" class="color-white menu-main_link">Productos</a>
-            </li>
-            <!-- /item -->
-            <li class="menu-main_item">
-              <a href="#" class="color-white menu-main_link">Noticias</a>
-            </li>
-            <!-- /item -->
-            <li class="menu-main_item">
-              <a href="quienes-somos.html" class="color-white menu-main_link">Sobre nosotros</a>
-            </li>
-            <!-- /item -->
-          </ul>
-          <ul class="menu-global_list hide-desktop-md">
-            <li class="menu-global_item">
-              <a href="contactanos.html" class="menu-global_link">Contáctanos</a>
-            </li>
-            <li class="menu-global_item">
-              <a href="blog.html" class="menu-global_link">Blog</a>
-            </li>
-            <li class="menu-global_item">
-              <a href="#" class="color-red menu-global_link">Iniciar sesión</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- /nav -->
+        <%include src="./components/header.html"%>
 
       <div class="banner-main">
         <div class="swiper-container swiper-container--banner">
@@ -203,50 +94,40 @@
           <div class="flex-container list-products">
             <div class="col-6 col-sm-3 text-center">
               <div class="item-product">
-                <figure class="item-product_fig mg-btm-20 wow fadeInUp">
-                  <a href="#"
-                    ><img src="assets/icons/icon-health.png" alt="" />
-                  </a>
-                </figure>
-                <h3 class="item-product_title font-20 color-blue-dark">
-                  <a href="#">Salud</a>
-                </h3>
+                  <figure class="item-product_fig mg-btm-20 wow fadeInUp">
+                    <a href="#"
+                        ><img src="assets/icons/icon-health.png" alt=""/>
+                    </a>
+                  </figure>
+                  <h3 class="item-product_title font-20 color-blue-dark"><a href="#">Salud</a></h3>
               </div>
             </div>
             <!-- /col -->
             <div class="col-6 col-sm-3 text-center">
-              <div class="item-product">
-                <figure class="item-product_fig mg-btm-20 wow fadeInUp">
-                  <a href="#"><img src="assets/icons/icon-life.png" alt=""/></a>
-                </figure>
-                <h3 class="item-product_title font-20 color-blue-dark">
-                  <a href="#">Vida</a>
-                </h3>
-              </div>
+                <div class="item-product">
+                    <figure class="item-product_fig mg-btm-20 wow fadeInUp">
+                        <a href="#"><img src="assets/icons/icon-life.png" alt=""/></a>
+                    </figure>
+                    <h3 class="item-product_title font-20 color-blue-dark"><a href="#">Vida</a></h3>
+                </div>
             </div>
             <!-- /col -->
             <div class="col-6 col-sm-3 text-center">
-              <div class="item-product">
-                <figure class="item-product_fig mg-btm-20 wow fadeInUp">
-                  <a href="#"
-                    ><img src="assets/icons/icon-money.png" alt=""
-                  /></a>
-                </figure>
-                <h3 class="item-product_title font-20 color-blue-dark">
-                  <a href="#">Deuda</a>
-                </h3>
-              </div>
+                <div class="item-product">
+                    <figure class="item-product_fig mg-btm-20 wow fadeInUp">
+                        <a href="#"><img src="assets/icons/icon-money.png" alt=""/></a>
+                    </figure>
+                    <h3 class="item-product_title font-20 color-blue-dark"><a href="#">Deuda</a></h3>
+                </div>
             </div>
             <!-- /col -->
             <div class="col-6 col-sm-3 text-center">
-              <div class="item-product">
-                <figure class="item-product_fig mg-btm-20 wow fadeInUp">
-                  <a href="#"><img src="assets/icons/icon-home.png" alt=""/></a>
-                </figure>
-                <h3 class="item-product_title font-20 color-blue-dark">
-                  <a href="#">Hogar</a>
-                </h3>
-              </div>
+                <div class="item-product">
+                    <figure class="item-product_fig mg-btm-20 wow fadeInUp">
+                        <a href="#"><img src="assets/icons/icon-home.png" alt=""/></a>
+                      </figure>
+                      <h3 class="item-product_title font-20 color-blue-dark"><a href="#">Hogar</a></h3>
+                </div>
             </div>
             <!-- /col -->
           </div>
@@ -257,17 +138,14 @@
       <section class="quotation-modules flex-container">
         <div class="container no-padding-md">
           <div class="flex-container h-100">
-            <div
-              class="col-md-4 bg-yellow flex-container flex-column flex-justify-center"
-            >
+            <div class="col-md-4 bg-yellow flex-container flex-column flex-justify-center">
               <div class="quotation-content">
                 <div class="quotation-content_info mg-btm-30">
-                  <h2 class="color-blue">
-                    ¡Sabemos qué <span class="u-bold">estás buscando!</span>
-                  </h2>
-                  <p class="font-20">
-                    Y aquí te mostramos opciones fácil y rápido.
-                  </p>
+                    <h2 class="color-blue">
+                        ¡Sabemos qué <span class="u-bold">estás buscando!</span>
+                      </h2>
+                      <p class="font-20">Y aquí te mostramos opciones
+                        fácil y rápido.</p>
                 </div>
                 <div class="select-custom mg-btm-30">
                   <select>
@@ -277,9 +155,8 @@
                     <option value="3">Option 3</option>
                   </select>
                 </div>
-                <a href="#" class="u-btn u-btn--blue-dark">Compara tu seguro</a>
-              </div>
-              <!-- /quotation-content -->
+                  <a href="#" class="u-btn u-btn--blue-dark">Compara tu seguro</a>
+              </div><!-- /quotation-content -->
             </div>
             <!-- /col -->
             <div class="col-md-8">
@@ -311,11 +188,11 @@
 
       <section class="how-works">
         <div class="container">
-          <div class="text-center">
-            <div class="title-section">
-              <h2><span>¿Cómo funciona</span> Te respaldo?</h2>
+            <div class="text-center">
+                <div class="title-section">
+                    <h2><span>¿Cómo funciona</span> Te respaldo?</h2>
+                </div>
             </div>
-          </div>
         </div>
         <!-- /container -->
         <div class="how-works_end">
@@ -438,9 +315,7 @@
 
       <section class="sect-blog">
         <div class="container">
-          <h2 class="u-bold font-30 mg-btm-30">
-            ¡Mira! Seguro te va a interesar
-          </h2>
+          <h2 class="u-bold font-30 mg-btm-30">¡Mira! Seguro te va a interesar</h2>
           <div class="flex-container grid">
             <div class="col-sm-4 mg-btm-30">
               <div class="card-post bg-white wow fadeInUp">
@@ -453,28 +328,23 @@
                     Aprende a elegir tu seguro de salud
                   </h3>
                   <p>
-                    Son taaantas las opciones de seguros de salud que hay en
-                    Colombia, pero tan poca la información para saber cuál es la
-                    mejor…
+                    Son taaantas las opciones de seguros de salud que hay en Colombia,
+                    pero tan poca la información para saber cuál es la mejor…
                   </p>
                   <div class="card-post_actions flex-container mg-btm-30 grid">
                     <div class="col-xs-6">
-                      <div class="cont-stars">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                      </div>
+                        <div class="cont-stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
                     </div>
                     <!-- /col -->
                     <div class="col-6 text-right">
-                      <span class="action-item"
-                        ><i class="fas fa-comment-dots"></i> 12</span
-                      >
-                      <span class="action-item"
-                        ><i class="fas fa-share-alt"></i> 24</span
-                      >
+                      <span class="action-item"><i class="fas fa-comment-dots"></i>  12</span>
+                      <span class="action-item"><i class="fas fa-share-alt"></i> 24</span>
                     </div>
                     <!-- /col -->
                   </div>
@@ -489,7 +359,7 @@
             <div class="col-sm-4 mg-btm-30">
               <div class="card-post bg-white wow fadeInUp">
                 <figure class="card-post_fig">
-                  <img src="assets/images/image.jpg" alt="" />
+                      <img src="assets/images/image.jpg" alt="" />
                 </figure>
                 <!-- /card-post_fig -->
                 <div class="card-post_cont">
@@ -497,27 +367,23 @@
                     ¿Quién necesita un seguro de vida?
                   </h3>
                   <p>
-                    Como dicen por ahí: “es mejor prevenir que curar”, y los
-                    seguros de vida tiene muy claro eso…
+                    Como dicen por ahí: “es mejor prevenir que curar”, y los seguros
+                    de vida tiene muy claro eso…
                   </p>
                   <div class="card-post_actions flex-container mg-btm-30 grid">
                     <div class="col-xs-6">
-                      <div class="cont-stars">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                      </div>
+                        <div class="cont-stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
                     </div>
                     <!-- /col -->
                     <div class="col-6 text-right">
-                      <span class="action-item"
-                        ><i class="fas fa-comment-dots"></i> 12</span
-                      >
-                      <span class="action-item"
-                        ><i class="fas fa-share-alt"></i> 24</span
-                      >
+                        <span class="action-item"><i class="fas fa-comment-dots"></i>  12</span>
+                        <span class="action-item"><i class="fas fa-share-alt"></i> 24</span>
                     </div>
                     <!-- /col -->
                   </div>
@@ -532,7 +398,7 @@
             <div class="col-sm-4 mg-btm-30">
               <div class="card-post bg-white wow fadeInUp">
                 <figure class="card-post_fig">
-                  <img src="assets/images/image.jpg" alt="" />
+                      <img src="assets/images/image.jpg" alt="" />
                 </figure>
                 <!-- /card-post_fig -->
                 <div class="card-post_cont">
@@ -540,27 +406,23 @@
                     ¿Para qué sirve un seguro de hogar?
                   </h3>
                   <p>
-                    Dejar una llave de agua abierta e inundar al vecino de
-                    abajo, ¡le puede pasar a cualquiera!
+                    Dejar una llave de agua abierta e inundar al vecino de abajo, ¡le
+                    puede pasar a cualquiera!
                   </p>
                   <div class="card-post_actions flex-container mg-btm-30 grid">
                     <div class="col-6">
-                      <div class="cont-stars">
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                        <i class="fas fa-star" aria-hidden="true"></i>
-                      </div>
+                        <div class="cont-stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
                     </div>
                     <!-- /col -->
                     <div class="col-xs-6 text-right">
-                      <span class="action-item"
-                        ><i class="fas fa-comment-dots"></i> 12</span
-                      >
-                      <span class="action-item"
-                        ><i class="fas fa-share-alt"></i> 24</span
-                      >
+                        <span class="action-item"><i class="fas fa-comment-dots"></i>  12</span>
+                        <span class="action-item"><i class="fas fa-share-alt"></i> 24</span>
                     </div>
                     <!-- /col -->
                   </div>
@@ -591,9 +453,7 @@
                 <div class="col-12">
                   <div class="select-custom">
                     <select>
-                      <option value="" disabled selected
-                        >Quiero saber de...</option
-                      >
+                      <option value="" disabled selected>Quiero saber de...</option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
                       <option value="3">Option 3</option>
@@ -613,9 +473,7 @@
                   <div class="col-6">
                     <label class="checkbox-text">
                       <input type="checkbox" />
-                      <a href="#" class="font-14"
-                        >Acepto políticas de privacidad</a
-                      >
+                      <a href="#" class="font-14">Acepto políticas de privacidad</a>
                     </label>
                   </div>
                   <!-- /col -->
@@ -625,7 +483,7 @@
                     </button>
                   </div>
                   <!-- /col -->
-                </div>
+              </div>
               </form>
             </div>
             <!-- /col -->
@@ -636,23 +494,18 @@
       </section>
 
       <div class="quote-fixed bg-white" id="quote-fixed">
-        <h4 class="font-20 u-bold mg-btm-20">¿Comó te podemos ayudar?</h4>
-        <a href="#" class="u-btn u-btn--yellow">Cotiza tu seguro</a>
-        <button
-          class="quote-fixed_close"
-          id="quote-fixed_close"
-          aria-label="Cerrar"
-        ></button>
+        <h4 class="font-20 u-bold mg-btm-20">¿Comó te podemos
+          ayudar?</h4>
+          <a href="#" class="u-btn u-btn--yellow">Cotiza tu seguro</a>
+          <button class="quote-fixed_close" id="quote-fixed_close" aria-label="Cerrar"></button>
       </div>
       <div class="chat-button bg-yellow">
-        <img src="../../assets/icons/icon-chat.png" alt="" />
+        <img src="../../assets/icons/icon-chat.png" alt="">
       </div>
 
       <footer class="bg-blue-dark footer-main">
         <div class="container">
-          <div
-            class="social-networks social-networks--one text-center mg-btm-20"
-          >
+          <div class="social-networks social-networks--one text-center mg-btm-20">
             <a
               href="#"
               target="_blank"
@@ -707,11 +560,10 @@
           </div>
         </div>
         <div class="text-center footer-copy">
-          <h5 class="color-white u-regular">
-            Te Respaldo 2019 © All rights reserved Copyright
-          </h5>
+          <h5 class="color-white u-regular">Te Respaldo 2019 © All rights reserved Copyright</h5>
         </div>
       </footer>
+
     </div>
 
     <!-- Scripts -->

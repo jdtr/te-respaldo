@@ -49,6 +49,9 @@ h1, h2, h3, h4, h5, h6 {
     color: $blue-medium;
     letter-spacing: .4px;
 }
+h1, h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
 h1 {
     font-size: $size-35
 }
@@ -99,6 +102,10 @@ h4 {
 .pad-05 {
    padding: 120px 0; 
 }
+.pad-06 {
+    padding-top:40px;
+    padding-bottom: 60px; 
+}
 .pad-top-01 {
     padding-top: 120px;
 }
@@ -147,14 +154,17 @@ h4 {
 .u-uppercase {
     text-transform: uppercase;
 }
-.u-bold {
-    font-weight: bold;
+.u-underline {
+    text-decoration: underline;
 }
 .u-regular {
     font-weight: normal;
 }
 .u-medium {
     font-weight: 500;
+}
+.u-bold {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .font {
     &-14 {
@@ -202,7 +212,9 @@ h4 {
     &-white {
         background-color: white;
     }
-
+    &-blue {
+        background-color: $blue;
+    }
     &-blue-dark {
         background-color: $blue-dark;
     }
@@ -227,6 +239,9 @@ h4 {
     letter-spacing: .4px;
     border-radius: 2px;
     font-weight: 500;
+    &:first-letter {
+        text-transform: uppercase;
+    }
     @include transition(background-color, .2s);
     &--sm {
         padding:12px 30px;
@@ -259,6 +274,43 @@ h4 {
                 background-color: $red;
                 color: white;
             }
+        }
+    }
+    &--red {
+        background-color: $red;
+        color: white;
+        &:hover {
+            background-color: darken($red, 15%);
+        }
+    }
+    &--gray {
+        background-color: $gray;
+    }
+}
+
+//link-arrow
+.link-arrow {
+    display: inline-block;
+    position: relative;
+    padding-right: 15px;
+    font-weight: 500;
+    font-size: $size-18;
+    color: $blue-dark;
+    &:after {
+        @include seudo_elm();
+        width: 0;
+        height: 0;
+        top: 50%;
+        right: 0;
+        border-width: 6px 0 6px 7px;
+        border-style: solid;
+        border-color:transparent transparent transparent $red;
+        transition: right .2s linear;
+        transform: translateY(-50%);
+    }
+    &:hover {
+        &:after {
+            right: -5px;
         }
     }
 }
@@ -424,6 +476,42 @@ h4 {
             &:before {
                 color: $red;
             }
+        }
+    }
+}
+
+//Checkbox
+.checkbox-style {
+    position: relative;
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        &:checked + label:before {
+            background-color: $blue;
+            background-image: url(../../../assets/images/check-white.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 70%;
+        } 
+    }
+    label {
+        padding: 2px 0 2px 35px;
+        &:before {
+            @include seudo_elm();
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            left: 0;
+            border:1px solid rgba($gray-dark, .3);
+            transform: translateY(-50%);
+            transition: background-color .2s ease-in;
+        }
+    }
+    &--bold {
+        label {
+            font-weight: bold;
         }
     }
 }

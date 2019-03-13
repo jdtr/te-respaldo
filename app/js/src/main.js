@@ -59,6 +59,25 @@ $(function () {
         });
     }
 
+    function compare () {
+        $(".list-products").on("click", function (e) {
+            var currElm = $(e.target);
+
+            if ( e.target.tagName == "LABEL" ) {
+                var parent = $(currElm).parents(".products-item");
+                if(!$(currElm).prev().prop("checked")) {
+                    parent.addClass("compare");
+                    parent.find(".u-btn").text("comparar");
+                    parent.find(".u-btn").removeClass("u-btn--yellow").addClass("u-btn--red");
+                } else {
+                    parent.removeClass("compare");
+                    parent.find(".u-btn").text("aplicar");
+                    parent.find(".u-btn").removeClass("u-btn--red").addClass("u-btn--yellow");
+                }
+            }
+        })
+    }
+
     //Elementos fijos
     if( win.outerWidth() < 992 ) {
         win.on("scroll", function () {
@@ -137,4 +156,7 @@ $(function () {
 
     tabs (".m-tabs_item a", ".cont-tabs");
     tabsMob(".m-tabs--mob", ".cont-tabs");
+
+    //compare
+    compare ();
 })

@@ -1,10 +1,12 @@
 // ============== Var ==============
 //Colors
 $blue-light: #58e1db;
+$blue:#2cb8ff;
 $blue-medium:#112160;
 $blue-dark: #313a54;
 $red:#fc3936;
 $yellow: #ffc508;
+$gray: #e8e8e8;
 $gray-light:#f3f3f3;
 $gray-medium: #d7d7d7;
 $gray-dark: #5d5d5d;
@@ -32,6 +34,10 @@ $size-35: 2.1rem;
     top: $top;
     left: $left;
     transform: translate($x, $y);
+}
+
+@mixin grayLight ($prop:border, $size:1px) {
+    #{$prop}: $size solid rgba($gray-dark, .1);
 }
 @mixin stylePlaceholder ($elm:input, $color:currentColor) {
     ::-webkit-#{$elm}-placeholder { 

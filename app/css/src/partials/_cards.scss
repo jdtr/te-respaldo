@@ -112,3 +112,44 @@
         color: $gray-medium;
     }
 }
+
+//Card simple
+.card-simple {
+    padding: 25px;
+    background-color: white;
+    border-bottom: 1px solid rgba(black, .2);
+}
+
+//card-product
+.card-product {
+    &_fig {
+        padding: 40px 30px;
+        border-bottom: 1px solid rgba(black, .1);
+    }
+    &_cont {
+        padding: 25px 30px 30px 30px;
+        p {
+            padding-left: 20px;
+        }
+        .u-btn {
+            width: 100%;
+        }
+    }
+    &_price {
+        display: inline-block;
+        position: relative;
+        color: $blue-dark;
+        &:before {
+            @include seudo_elm();
+            width: 0;
+            height: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            border-width: 8px 0 8px 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent $blue-light;
+        }
+    }
+}
